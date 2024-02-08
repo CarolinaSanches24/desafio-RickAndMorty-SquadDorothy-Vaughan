@@ -52,7 +52,7 @@ _Responsavéis_ :
 #### O que foi feito:
 
 1. Maria Carolina fez as configurações iniciais do projeto e criou Template Scrum no Jira para aplicar métodologia agíl no desenvolvimento.
-2.
+2. Maria carolina criou função para pegar os dados de localização da api, criou o template locations.html, e a rota /locations.
 3.
 4.
 5.
