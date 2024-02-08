@@ -41,3 +41,33 @@ def get_list_characters():
         characters.append(character);
     return {"characters":characters}
 
+@app.route("/locations") # rota de locations
+def get_list_locations_page():
+    url = "https://rickandmortyapi.com/api/location";
+    response = urllib.request.urlopen(url) # envia a req e recebe a res
+    data = response.read(); # leitura dos dados vindos da api
+    dict = json.loads(data); # transforma esses dados em json p/ python
+    
+    return render_template("locations.html", locations = dict["results"]);
+   
+     
+@app.route("/listalocations") # rota da lista de localizações
+def get_locations():
+    url = "https://rickandmortyapi.com/api/location";
+    response = urllib.request.urlopen(url) # envia a req e recebe a res
+    data = response.read(); # leitura dos dados vindos da api
+    dict = json.loads(data); # transforma esses dados em json p/ python
+    
+    locations = [];
+    
+    for location in dict["results"]:
+        location = {
+            "id":location["id"],
+            "name":location["name"],
+            "type":location["type"],
+            "dimension":location["dimension"]
+        }
+        
+        locations.append(location);
+    
+    return {"locations":locations}

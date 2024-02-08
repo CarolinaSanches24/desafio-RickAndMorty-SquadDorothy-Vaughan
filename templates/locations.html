@@ -1,0 +1,23 @@
+{% extends "layout.html"%} {% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Tipo</th>
+      <th scope="col">Dimensão</th>
+      <th scope="col">Link perfil localização</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for location in locations %}
+    <tr>
+      <th scope="row">{{location.id}}</th>
+      <td>"{{location.name}}"</td>
+      <td>"{{location.type}}"</td>
+      <td>"{{location.dimension}}"</td>
+    </tr>
+    {% endfor%}
+  </tbody>
+</table>
+{% endblock %}
