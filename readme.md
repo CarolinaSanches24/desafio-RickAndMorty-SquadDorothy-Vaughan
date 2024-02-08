@@ -27,7 +27,7 @@ Repositório colaborativo do Squad Dorothy Vaughan, referente ao Desafio de Cód
     Branch:
     RotaLocations
 
-_Responsavéis_ :
+_Responsavéis_ : Maria Carolina e ...
 
     Branch:
     RotaEpsodios
@@ -37,7 +37,7 @@ _Responsavéis_ :
     Branch:
     RotaPerfilLocation
 
-_Responsavéis_ :
+_Responsavéis_ : Maria Carolina e ...
 
     Branch:
     RotaPerfilEpisodio

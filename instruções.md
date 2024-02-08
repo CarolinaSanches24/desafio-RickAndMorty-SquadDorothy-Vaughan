@@ -1,37 +1,29 @@
-# Desafios Squad Dorothy Vaughan
+**Para criar o ambiente Virtual**
 
-Repositório colaborativo do Squad Dorothy Vaughan, referente ao Desafio de Código do curso Bootcamp Back-End em Python e Django da WoMakersCode.
+```shell
+py -3 -m venv .venv
+```
 
-## Integrantes do Squad:
+**Para Ativar o ambiente virtual**
 
-- [Ana Carolina Fonseca Barreto](https://github.com/anafbarreto)
-- [Jane Souza](https://github.com/janessf)
-- [Kássia Ellen da Silva Nascimento](não partipou)
-- [Renata Vitoria](não partipou)
-- [Simone Braghin](https://github.com/SimoneBraghin)
-- [Clarice Sofia Henrique Soares](https://github.com/claricesoares)
-- [Isadora Bagatini](https://github.com/IsahBag)
-- [Janaina Solidade](https://github.com/janasolidade)
-- [Maitê Haramoni Soares](https://github.com/maiharamoni)
-- [Thaís Aparecida dos Santos](https://github.com/ThaisAp10)
-- [Maria Carolina de J. de Moraes](https://github.com/CarolinaSanches24)
+```shell
+.venv\Scripts\activate
+```
 
----
+**Instalação do Flask**
 
-## Desafio - Consumo de Dados API Rick And Morty:
+```shell
+pip install Flask
+```
 
-### Forma de organização (como nos organizamos para fazer a resolução dos desafios):
+**Baixar atualizações caso necessário**
 
-## Divisão de Tarefas em Branchs
+```shell
+python.exe -m pip install --upgrade pip
+```
 
-Branch:
-RotaLocations
+**Executar o programa**
 
-#### O que foi feito:
-
-1. Maria Carolina fez as configurações iniciais do projeto e criou Template Scrum no Jira para aplicar métodologia agíl no desenvolvimento.
-2.
-3.
-4.
-5.
-6.
+```shell
+flask —app app run
+```
