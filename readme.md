@@ -24,8 +24,30 @@ Repositório colaborativo do Squad Dorothy Vaughan, referente ao Desafio de Cód
 
 ## Divisão de Tarefas em Branchs
 
-Branch:
-RotaLocations
+    Branch:
+    RotaLocations
+
+_Responsavéis_ :
+
+    Branch:
+    RotaEpsodios
+
+_Responsavéis_ :
+
+    Branch:
+    RotaPerfilLocation
+
+_Responsavéis_ :
+
+    Branch:
+    RotaPerfilEpisodio
+
+_Responsavéis_ :
+
+    Branch:
+    AddInformacoesPerfilPersonagem
+
+_Responsavéis_ :
 
 #### O que foi feito:
 
