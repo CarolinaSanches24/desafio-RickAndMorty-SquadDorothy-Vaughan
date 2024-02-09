@@ -37,7 +37,7 @@ _Responsavéis_ :
     Branch:
     RotaPerfilLocation
 
-_Responsavéis_ : Maria Carolina e ...
+_Responsavéis_ : Maria Carolina e Isadora Bagatini
 
     Branch:
     RotaPerfilEpisodio
