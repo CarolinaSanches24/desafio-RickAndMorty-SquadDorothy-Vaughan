@@ -1,0 +1,12 @@
+{% extends "layout.html"%} {% block content %}
+<div class="row">
+  {% for episode in episodes %}
+  <div>
+    <h3 class="h5">Ep. cód. {{episode.code}}: {{episode.name}} - Data de lançamento: {{episode.air_date}}</h3>
+    <!--<p>
+      <a href="/profile/{{episode.id}}" class="btn btn-primary">Ver perfil</a>
+    </p>-->
+  </div>
+  {% endfor%}
+</div>
+{% endblock %}
