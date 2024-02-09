@@ -1,0 +1,90 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request.",
+        "description": "urllib.request.",
+        "detail": "urllib.request.",
+        "documentation": {}
+    },
+    {
+        "label": "get_list_characters_page",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_list_characters_page():\n    url = \"https://rickandmortyapi.com/api/character\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res\n    data = response.read(); # leitura dos dados vindos da api\n    dict = json.loads(data); # transforma esses dados em json p/ python\n    return render_template(\"characters.html\", characters = dict[\"results\"])\n@app.route(\"/profile/<id>\") # obter um personagem\ndef get_profile(id):\n    url = \"https://rickandmortyapi.com/api/character/\"+id;\n    response = urllib.request.urlopen(url) ",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_profile",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_profile(id):\n    url = \"https://rickandmortyapi.com/api/character/\"+id;\n    response = urllib.request.urlopen(url) \n    data = response.read(); \n    dict = json.loads(data);\n    return render_template(\"profile.html\", profile = dict)\n@app.route(\"/lista\")\ndef get_list_characters():\n    url = \"https://rickandmortyapi.com/api/character\";\n    response = urllib.request.urlopen(url)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_list_characters",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_list_characters():\n    url = \"https://rickandmortyapi.com/api/character\";\n    response = urllib.request.urlopen(url)\n    characters = response.read();\n    dict = json.loads(characters);\n    characters = []\n    for character in dict[\"results\"]:\n        character = {\n            \"name\":character[\"name\"],\n            \"status\":character[\"status\"]",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_list_locations_page",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_list_locations_page():\n    url = \"https://rickandmortyapi.com/api/location\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res\n    data = response.read(); # leitura dos dados vindos da api\n    dict = json.loads(data); # transforma esses dados em json p/ python\n    return render_template(\"locations.html\", locations = dict[\"results\"]);\n@app.route(\"/listalocations\") # rota da lista de localizações\ndef get_locations():\n    url = \"https://rickandmortyapi.com/api/location\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_locations",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_locations():\n    url = \"https://rickandmortyapi.com/api/location\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res\n    data = response.read(); # leitura dos dados vindos da api\n    dict = json.loads(data); # transforma esses dados em json p/ python\n    locations = [];\n    for location in dict[\"results\"]:\n        location = {\n            \"id\":location[\"id\"],\n            \"name\":location[\"name\"],",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_location",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_location(id):\n    url = f\"https://rickandmortyapi.com/api/location/{id}\"\n    response = urllib.request.urlopen(url) \n    data = response.read(); \n    location_dict = json.loads(data);\n    return render_template(\"location.html\", location=location_dict);",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask (__name__)\n@app.route(\"/\") # rota de  URL raiz\ndef get_list_characters_page():\n    url = \"https://rickandmortyapi.com/api/character\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res\n    data = response.read(); # leitura dos dados vindos da api\n    dict = json.loads(data); # transforma esses dados em json p/ python\n    return render_template(\"characters.html\", characters = dict[\"results\"])\n@app.route(\"/profile/<id>\") # obter um personagem\ndef get_profile(id):",
+        "detail": "app",
+        "documentation": {}
+    }
+]

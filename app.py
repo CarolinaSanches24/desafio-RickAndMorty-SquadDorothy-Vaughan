@@ -71,3 +71,12 @@ def get_locations():
         locations.append(location);
     
     return {"locations":locations}
+
+@app.route("/location/<id>") # obter uma location
+def get_location(id):
+    url = f"https://rickandmortyapi.com/api/location/{id}"
+    response = urllib.request.urlopen(url) 
+    data = response.read(); 
+    location_dict = json.loads(data);
+    
+    return render_template("location.html", location=location_dict);
