@@ -43,34 +43,26 @@ def get_list_characters():
 
 @app.route("/locations") # rota de locations
 def get_list_locations_page():
-    url = "https://rickandmortyapi.com/api/location";
-    response = urllib.request.urlopen(url) # envia a req e recebe a res
-    data = response.read(); # leitura dos dados vindos da api
-    dict = json.loads(data); # transforma esses dados em json p/ python
+        url = "https://rickandmortyapi.com/api/location";
+        response = urllib.request.urlopen(url) # envia a req e recebe a res
+        data = response.read(); # leitura dos dados vindos da api
+        locations_data = json.loads(data); # transforma esses dados em json p/ python
     
-    return render_template("locations.html", locations = dict["results"]);
-   
-     
-@app.route("/listalocations") # rota da lista de localizações
-def get_locations():
-    url = "https://rickandmortyapi.com/api/location";
-    response = urllib.request.urlopen(url) # envia a req e recebe a res
-    data = response.read(); # leitura dos dados vindos da api
-    dict = json.loads(data); # transforma esses dados em json p/ python
+        locations = [];
     
-    locations = [];
-    
-    for location in dict["results"]:
-        location = {
-            "id":location["id"],
-            "name":location["name"],
-            "type":location["type"],
-            "dimension":location["dimension"]
-        }
-        
-        locations.append(location);
-    
-    return {"locations":locations}
+        #para cada localizacao cria um objeto com id, nome, tipo e dimensao
+        for location in locations_data["results"]:
+            location = {
+                "id":location["id"],
+                "name":location["name"],
+                "type":location["type"],
+                "dimension":location["dimension"]
+            }
+            # adiciona esse elemento a lista de localizações
+            locations.append(location);
+        #envia os dados para o template locations.html
+        return render_template("locations.html", locations = locations_data["results"]);
+
 
 @app.route("/location/<id>") # obter uma location
 def get_location(id):

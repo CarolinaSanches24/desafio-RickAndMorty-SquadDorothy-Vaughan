@@ -56,16 +56,7 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def get_list_locations_page():\n    url = \"https://rickandmortyapi.com/api/location\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res\n    data = response.read(); # leitura dos dados vindos da api\n    dict = json.loads(data); # transforma esses dados em json p/ python\n    return render_template(\"locations.html\", locations = dict[\"results\"]);\n@app.route(\"/listalocations\") # rota da lista de localizações\ndef get_locations():\n    url = \"https://rickandmortyapi.com/api/location\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res",
-        "detail": "app",
-        "documentation": {}
-    },
-    {
-        "label": "get_locations",
-        "kind": 2,
-        "importPath": "app",
-        "description": "app",
-        "peekOfCode": "def get_locations():\n    url = \"https://rickandmortyapi.com/api/location\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res\n    data = response.read(); # leitura dos dados vindos da api\n    dict = json.loads(data); # transforma esses dados em json p/ python\n    locations = [];\n    for location in dict[\"results\"]:\n        location = {\n            \"id\":location[\"id\"],\n            \"name\":location[\"name\"],",
+        "peekOfCode": "def get_list_locations_page():\n        url = \"https://rickandmortyapi.com/api/location\";\n        response = urllib.request.urlopen(url) # envia a req e recebe a res\n        data = response.read(); # leitura dos dados vindos da api\n        locations_data = json.loads(data); # transforma esses dados em json p/ python\n        locations = [];\n        #para cada localizacao cria um objeto com id, nome, tipo e dimensao\n        for location in locations_data[\"results\"]:\n            location = {\n                \"id\":location[\"id\"],",
         "detail": "app",
         "documentation": {}
     },
