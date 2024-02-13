@@ -27,17 +27,17 @@ Repositório colaborativo do Squad Dorothy Vaughan, referente ao Desafio de Cód
     Branch:
     RotaLocations
 
-_Responsavéis_ : Maria Carolina e Isadora Bagatini
+_Responsavéis_ : Maria Carolina .
 
     Branch:
     RotaEpsodios
 
-_Responsavéis_ :
+_Responsavéis_ : Isadora Bagatini.
 
     Branch:
     RotaPerfilLocation
 
-_Responsavéis_ : Maria Carolina e Isadora Bagatini
+_Responsavéis_ : Clarice Soares
 
     Branch:
     RotaPerfilEpisodio
