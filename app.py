@@ -41,16 +41,18 @@ def get_list_characters():
         characters.append(character)
     return {"characters":characters}
 
-@app.route("/episodes")  #rota de episodes
+# Criando uma rota para episódios:
+@app.route("/episodes")  
 
 def get_list_episodes_page():
-    url = "https://rickandmortyapi.com/api/episode"
-    response = urllib.request.urlopen(url)  # envia a req e recebe a res
-    episodes = response.read()  # leitura dos dados vindos da api
-    dict = json.loads(episodes) # transforma esses dados em json p/ python
+    url = "https://rickandmortyapi.com/api/episode" # abre a URL do api onde estão os episódios
+    response = urllib.request.urlopen(url)  # envia a requisição e atribui a resposta na variável "response"
+    episodes = response.read()  # lê os dados recebidos e atribui na variável "episodes"
+    dict = json.loads(episodes) # carrega os dados em json e os transforma em linguagem python
 
-    return render_template("episodes.html", episodes = dict["results"])
-    
+    return render_template("episodes.html", episodes = dict["results"]) 
+
+# Criando uma rota para a lista de episódios:
 @app.route("/listepisodes")
 
 def get_episodes():
@@ -58,19 +60,21 @@ def get_episodes():
     response = urllib.request.urlopen(url) 
     episodes = response.read() 
     dict = json.loads(episodes) 
-    episodes = []
+    episodes = [] # cria uma lista onde serão armazenados os episódios
     
-    for episode in dict["results"]:
-        episode = {
-            "code":episode["code"],
+    for episode in dict["results"]: 
+        episode = {  # cria um dicionário com as informações relevantes de cada ep. para que sejam adicionados na lista
+            "episode":episode["episode"],
             "name":episode["name"],
             "air_date":episode["air_date"],
             "id":episode["id"]
         }        
-        episodes.append(episode)
-    return {"episodes":episodes}   
-    
-@app.route("/episode/<id>") # obter uma location
+        episodes.append(episode) # adiciona todos os episódios na lista
+
+    return {"episodes":episodes} 
+
+#Criando uma rota para um episódio específico:    
+@app.route("/episode/<id>") 
 
 def get_episode(id):
     url = f"https://rickandmortyapi.com/api/episode/{id}"
