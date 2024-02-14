@@ -25,5 +25,5 @@ python.exe -m pip install --upgrade pip
 **Executar o programa**
 
 ```shell
-flask —app app run
+flask --app app run
 ```
