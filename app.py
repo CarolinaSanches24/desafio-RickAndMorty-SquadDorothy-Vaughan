@@ -73,7 +73,7 @@ def get_episodes():
 
     return {"episodes":episodes} 
 
-#Criando uma rota para um episódio específico:    
+#Criando uma rota para detalhes de um episódio específico:    
 @app.route("/episode/<id>") 
 
 def get_episode(id):
