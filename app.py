@@ -46,13 +46,13 @@ def get_list_characters():
 
 def get_list_episodes_page():
     url = "https://rickandmortyapi.com/api/episode" # abre a URL do api onde estão os episódios
-    response = urllib.request.urlopen(url)  # envia a requisição e atribui a resposta na variável "response"
-    episodes = response.read()  # lê os dados recebidos e atribui na variável "episodes"
-    dict = json.loads(episodes) # carrega os dados em json e os transforma em linguagem python
+    response = urllib.request.urlopen(url)  # envia a requisição e armezena os dados retornados
+    episodes = response.read()  # lê os dados recebidos
+    dict = json.loads(episodes) # carrega os dados em json 
 
-    return render_template("episodes.html", episodes = dict["results"]) 
+    return render_template("episodes.html", episodes = dict["results"]) # mostra os resultados no template criado
 
-# Criando uma rota para a lista de episódios:
+# Criando uma rota para a lista de episódios em JSON:
 @app.route("/listepisodes")
 
 def get_episodes():
@@ -63,23 +63,23 @@ def get_episodes():
     episodes = [] # cria uma lista onde serão armazenados os episódios
     
     for episode in dict["results"]: 
-        episode = {  # cria um dicionário com as informações relevantes de cada ep. para que sejam adicionados na lista
+        episode = {  # cria um dicionário com as informações requisitadas de cada ep. para que sejam adicionados na lista
             "episode":episode["episode"],
             "name":episode["name"],
             "air_date":episode["air_date"],
             "id":episode["id"]
         }        
-        episodes.append(episode) # adiciona todos os episódios na lista
+        episodes.append(episode) # adiciona os dados do episódio na lista
 
-    return {"episodes":episodes} 
+    return {"episodes":episodes} # retorno da lista de episódios
 
-#Criando uma rota para detalhes de um episódio específico:    
-@app.route("/episode/<id>") 
+#Criando uma rota para detalhes de um episódio específico, de acordo com o id:    
+# @app.route("/episode/<id>") 
 
-def get_episode(id):
-    url = f"https://rickandmortyapi.com/api/episode/{id}"
-    response = urllib.request.urlopen(url) 
-    data = response.read(); 
-    episode_dict = json.loads(data)
+# def get_episode(id):
+#     url = f"https://rickandmortyapi.com/api/episode/{id}"
+#     response = urllib.request.urlopen(url) 
+#     data = response.read(); 
+#     episode_dict = json.loads(data)
     
-    return render_template("episode.html", episode=episode_dict)
+#     return render_template("episode.html", episode=episode_dict) # mostra os detalhes do episódio no template criado
