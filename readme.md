@@ -42,7 +42,7 @@ _Responsavéis_ : Clarice Soares
     Branch:
     RotaPerfilEpisodio
 
-_Responsavéis_ :
+_Responsavéis_ : Simone Braghin
 
     Branch:
     AddInformacoesPerfilPersonagem
