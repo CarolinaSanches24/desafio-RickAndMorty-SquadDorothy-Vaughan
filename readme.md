@@ -42,7 +42,7 @@ _Responsavéis_ : Clarice Soares
     Branch:
     RotaPerfilEpisodio
 
-_Responsavéis_ : Simone Braghin
+_Responsavéis_ : Simone Braghin e Ana Carolina Barreto
 
     Branch:
     AddInformacoesPerfilPersonagem
@@ -52,8 +52,8 @@ _Responsavéis_ :
 #### O que foi feito:
 
 1. Maria Carolina fez as configurações iniciais do projeto e criou Template Scrum no Jira para aplicar métodologia agíl no desenvolvimento.
-2. Maria carolina criou função para pegar os dados de localização da api, criou o template locations.html, e a rota /locations.
-3.
+2. Maria Carolina criou função para pegar os dados de localização da api, criou o template locations.html, e a rota /locations.
+3. Ana Carolina criou rota para o perfil dos personagens.
 4.
 5.
 6.
