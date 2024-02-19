@@ -14,8 +14,7 @@ def get_list_characters_page():
     
     return render_template("characters.html", characters = dict["results"])
 
-@app.route("/profile/<id>") # obter um personagem
-
+@app.route("/profile/<id>")
 def get_profile(id):
     url = "https://rickandmortyapi.com/api/character/"+id
     response = urllib.request.urlopen(url) 
@@ -33,11 +32,11 @@ def get_list_characters():
     dict = json.loads(characters)
     
     characters = []
-    
+
     for character in dict["results"]:
         character = {
-            "name":character["name"],
-            "status":character["status"]
+            "name": character["name"],
+            "status": character["status"]
         }
         
         characters.append(character)
