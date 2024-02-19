@@ -49,6 +49,16 @@ def get_profile_episodes(id):
     data = response.read() 
     dict = json.loads(data)
 
+    characters = []
 
-    return render_template("episode.html", episode = dict)
+    for character_url in dict["characters"]:
+        character_response = urllib.request.urlopen(character_url)
+        character_data = json.loads(character_response.read())
+        characters.append(
+            {
+                "name": character_data["name"], 
+                "id": character_data["id"]
+            }
+        )
 
+    return render_template("episode.html", episode = dict, characters = characters)
