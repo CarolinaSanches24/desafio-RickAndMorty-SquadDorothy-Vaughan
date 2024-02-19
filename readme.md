@@ -27,22 +27,22 @@ Repositório colaborativo do Squad Dorothy Vaughan, referente ao Desafio de Cód
     Branch:
     RotaLocations
 
-_Responsavéis_ : Maria Carolina e ...
+_Responsavéis_ : Maria Carolina .
 
     Branch:
     RotaEpsodios
 
-_Responsavéis_ :
+_Responsavéis_ : Isadora Bagatini.
 
     Branch:
     RotaPerfilLocation
 
-_Responsavéis_ : Maria Carolina e ...
+_Responsavéis_ : Clarice Soares
 
     Branch:
     RotaPerfilEpisodio
 
-_Responsavéis_ :
+_Responsavéis_ : Simone Braghin e Ana Carolina Barreto
 
     Branch:
     AddInformacoesPerfilPersonagem
@@ -55,5 +55,7 @@ _Responsavéis_ :
 2. Maria carolina criou função para pegar os dados de localização da api, criou o template locations.html, e a rota /locations.
 3. Clarice Soares configurou a rota para exibir o perfil da localização e criou uma função para pegar a lista de personagens presentes em cada localizacão e um link para o perfil de cada personagem.
 4. Jane Souza refatorou e realizou revisão do código.
-5.
+5. Ana Carolina criou rota para o perfil dos personagens.
 6.
+7.
+8.
