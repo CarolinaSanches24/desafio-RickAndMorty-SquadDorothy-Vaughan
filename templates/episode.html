@@ -1,0 +1,11 @@
+{% extends "layout.html"%} {% block content %}
+
+<div class="container mt-3">
+    <h3>Nome do episódio: {{episode.name}}</h3>
+    <h3>Data de Lançamento: {{episode.air_date}}</h3>
+    <h3>Código: {{episode.episode}}</h3>
+    <p>{{episode.characters}}</p>
+
+</div>
+
+{% endblock %}
