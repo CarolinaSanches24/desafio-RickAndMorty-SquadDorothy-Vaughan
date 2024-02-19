@@ -1,16 +1,19 @@
 from flask import Flask, render_template
 import urllib.request, json
 
-app = Flask (__name__)
 
-@app.route("/") # rota de  URL raiz
+app = Flask(__name__)
+
+
+@app.route("/")
 def get_list_characters_page():
-    url = "https://rickandmortyapi.com/api/character";
-    response = urllib.request.urlopen(url) # envia a req e recebe a res
-    data = response.read(); # leitura dos dados vindos da api
-    dict = json.loads(data); # transforma esses dados em json p/ python
-    
-    return render_template("characters.html", characters = dict["results"])
+
+        url = "https://rickandmortyapi.com/api/character"
+        response = urllib.request.urlopen(url)
+        data = response.read()
+        characters_dict = json.loads(data)
+        return render_template("characters.html", characters=characters_dict["results"])
+  
 
 @app.route("/profile/<id>") # obter um personagem
 

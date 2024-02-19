@@ -29,7 +29,7 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def get_list_characters_page():\n    url = \"https://rickandmortyapi.com/api/character\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res\n    data = response.read(); # leitura dos dados vindos da api\n    dict = json.loads(data); # transforma esses dados em json p/ python\n    return render_template(\"characters.html\", characters = dict[\"results\"])\n@app.route(\"/profile/<id>\") # obter um personagem\ndef get_profile(id):\n    url = \"https://rickandmortyapi.com/api/character/\"+id;\n    response = urllib.request.urlopen(url) ",
+        "peekOfCode": "def get_list_characters_page():\n        url = \"https://rickandmortyapi.com/api/character\"\n        response = urllib.request.urlopen(url)\n        data = response.read()\n        characters_dict = json.loads(data)\n        return render_template(\"characters.html\", characters=characters_dict[\"results\"])\n@app.route(\"/profile/<id>\") # obter um personagem\ndef get_profile(id):\n    url = \"https://rickandmortyapi.com/api/character/\"+id;\n    response = urllib.request.urlopen(url) ",
         "detail": "app",
         "documentation": {}
     },
@@ -74,7 +74,7 @@
         "kind": 5,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "app = Flask (__name__)\n@app.route(\"/\") # rota de  URL raiz\ndef get_list_characters_page():\n    url = \"https://rickandmortyapi.com/api/character\";\n    response = urllib.request.urlopen(url) # envia a req e recebe a res\n    data = response.read(); # leitura dos dados vindos da api\n    dict = json.loads(data); # transforma esses dados em json p/ python\n    return render_template(\"characters.html\", characters = dict[\"results\"])\n@app.route(\"/profile/<id>\") # obter um personagem\ndef get_profile(id):",
+        "peekOfCode": "app = Flask(__name__)\n@app.route(\"/\")\ndef get_list_characters_page():\n        url = \"https://rickandmortyapi.com/api/character\"\n        response = urllib.request.urlopen(url)\n        data = response.read()\n        characters_dict = json.loads(data)\n        return render_template(\"characters.html\", characters=characters_dict[\"results\"])\n@app.route(\"/profile/<id>\") # obter um personagem\ndef get_profile(id):",
         "detail": "app",
         "documentation": {}
     }
