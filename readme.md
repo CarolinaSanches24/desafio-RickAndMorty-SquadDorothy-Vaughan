@@ -32,7 +32,7 @@ _Responsavéis_ : Maria Carolina .
     Branch:
     RotaEpsodios
 
-_Responsavéis_ : Isadora Bagatini.
+_Responsavéis_ :
 
     Branch:
     RotaPerfilLocation
@@ -53,9 +53,9 @@ _Responsavéis_ :
 
 1. Maria Carolina fez as configurações iniciais do projeto e criou Template Scrum no Jira para aplicar métodologia agíl no desenvolvimento.
 2. Maria carolina criou função para pegar os dados de localização da api, criou o template locations.html, e a rota /locations.
-3. Clarice Soares configurou a rota para exibir o perfil da localização e criou uma função para pegar a lista de personagens presentes em cada localizacão e um link para o perfil de cada personagem.
-4. Jane Souza refatorou e realizou revisão do código.
-5. Ana Carolina criou rota para o perfil dos personagens.
+3.
+4.
+5.
 6.
 7.
 8.

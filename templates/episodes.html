@@ -1,0 +1,26 @@
+{% extends "layout.html"%} {% block content %}
+<div class="row">
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Episódio</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Lançamento</th>
+          <th scope="col">Link</th>
+        </tr>
+      </thead>
+    {% for episode in episodes %}  
+      <tbody>
+        <tr>
+          <th scope="row"> <h3 class="h5"></h3>{{episode.episode}}</h3></th>
+          <td><h3 class="h5"></h3>{{episode.name}}</h3></td>
+          <td><h3 class="h5"></h3>{{episode.air_date}}</h3></td>
+          <td><a href="/detail/{{episode.id}}" class="btn btn-primary">Clique aqui!</a></td>
+        </tr>
+      </tbody>
+    {% endfor%}
+    </table>    
+  </div> 
+</div>
+{% endblock %}
