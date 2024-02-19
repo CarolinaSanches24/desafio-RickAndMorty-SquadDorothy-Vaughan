@@ -5,8 +5,10 @@
 <p>Dimensão:"{{location.dimension}}"</p>
 <ul class="list-group" style="padding-left: 2em">
   <b>Lista de Personagens:</b>
-
-  <!--! Falta Adicionar lista com os personagens que aparecem na localização-->
-  <!-- *Falta adicionar o Link para a página de perfil do personagem  -->
+    {% for character in characters %}
+      <li>
+        <a href="/profile/{{ character.id }}">{{ character.name }}</a>
+      </li>
+    {% endfor %} 
 </ul>
 {% endblock %}

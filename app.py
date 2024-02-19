@@ -21,11 +21,11 @@ def get_profile(id):
     url = "https://rickandmortyapi.com/api/character/"+id;
     response = urllib.request.urlopen(url) 
     data = response.read(); 
-    dict = json.loads(data);
+    character_data = json.loads(data);
     
-    return render_template("profile.html", profile = dict)
+    return render_template("profile.html", profile = character_data)
 
-@app.route("/lista")
+@app.route("/lista") #Personagens em formato JSON
 
 def get_list_characters():
     url = "https://rickandmortyapi.com/api/character";
@@ -70,8 +70,19 @@ def get_list_locations_page():
 @app.route("/location/<id>") # obter uma location
 def get_location(id):
     url = f"https://rickandmortyapi.com/api/location/{id}"
-    response = urllib.request.urlopen(url) 
-    data = response.read(); 
-    location_dict = json.loads(data);
+    response = urllib.request.urlopen(url)
+    location_data = response.read()
+    location_dict = json.loads(location_data)
     
-    return render_template("location.html", location=location_dict);
+    characters = [] 
+
+    for character_url in location_dict.get("residents", []):
+        response = urllib.request.urlopen(character_url)
+        character_data = response.read()
+        character_dict = json.loads(character_data)
+        characters.append({
+            "id": character_dict["id"],
+            "name": character_dict["name"]
+        })
+    
+    return render_template("location.html", location=location_dict, characters=characters)
