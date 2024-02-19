@@ -1,0 +1,63 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.request,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request.",
+        "description": "urllib.request.",
+        "detail": "urllib.request.",
+        "documentation": {}
+    },
+    {
+        "label": "get_list_characters_page",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_list_characters_page():\n    url = \"https://rickandmortyapi.com/api/character\"\n    response = urllib.request.urlopen(url)\n    data = response.read()\n    dict = json.loads(data)\n    return render_template(\"characters.html\", characters = dict[\"results\"])\n@app.route(\"/profile/<id>\")\ndef get_profile(id):\n    url = f\"https://rickandmortyapi.com/api/character/{id}\"\n    response = urllib.request.urlopen(url)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_profile",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_profile(id):\n    url = f\"https://rickandmortyapi.com/api/character/{id}\"\n    response = urllib.request.urlopen(url)\n    data = response.read()\n    dict = json.loads(data)\n    return render_template(\"profile.html\", profile = dict)\n@app.route(\"/lista\")\ndef get_list_characters():\n    url = \"https://rickandmortyapi.com/api/character\"\n    response = urllib.request.urlopen(url)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "get_list_characters",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def get_list_characters():\n    url = \"https://rickandmortyapi.com/api/character\"\n    response = urllib.request.urlopen(url)\n    characters = response.read()\n    dict = json.loads(characters)\n    characters = []\n    for character in dict[\"results\"]:\n        character = {\n            \"name\": character[\"name\"],\n            \"status\": character[\"status\"]",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\n#Criar as Rotas\n@app.route(\"/\")\ndef get_list_characters_page():\n    url = \"https://rickandmortyapi.com/api/character\"\n    response = urllib.request.urlopen(url)\n    data = response.read()\n    dict = json.loads(data)\n    return render_template(\"characters.html\", characters = dict[\"results\"])\n@app.route(\"/profile/<id>\")",
+        "detail": "app",
+        "documentation": {}
+    }
+]
