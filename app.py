@@ -9,8 +9,8 @@ app = Flask(__name__)
 def get_list_characters_page():
     url = "https://rickandmortyapi.com/api/character"
     response = urllib.request.urlopen(url) # envia a req e recebe a res
-    data = response.read(); # leitura dos dados vindos da api
-    dict = json.loads(data); # transforma esses dados em json p/ python
+    data = response.read() # leitura dos dados vindos da api
+    dict = json.loads(data) # transforma esses dados em json p/ python
     
     return render_template("characters.html", characters = dict["results"])
 
@@ -118,13 +118,12 @@ def get_episodes():
 
     return {"episodes":episodes} # retorno da lista de episódios
 
-#Criando uma rota para detalhes de um episódio específico, de acordo com o id:    
-# @app.route("/episode/<id>") 
+# Rota carregar o perfil do episódio
+@app.route("/episode/<id>")
+def get_profile_episode(id):
+    url = f"https://rickandmortyapi.com/api/episode/{id}"
+    response = urllib.request.urlopen(url) 
+    data = response.read() 
+    episode_data = json.loads(data)    
 
-# def get_episode(id):
-#     url = f"https://rickandmortyapi.com/api/episode/{id}"
-#     response = urllib.request.urlopen(url) 
-#     data = response.read(); 
-#     episode_dict = json.loads(data)
-    
-#     return render_template("episode.html", episode=episode_dict) # mostra os detalhes do episódio no template criado
+    return render_template("episode.html", episode = episode_data)
