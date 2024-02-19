@@ -1,10 +1,22 @@
 {% extends "layout.html"%} {% block content %}
 
 <div class="container mt-3">
-  <h3>Nome do episódio: {{episode.name}}</h3>
-  <h3>Data de Lançamento: {{episode.air_date}}</h3>
-  <h3>Código: {{episode.episode}}</h3>
-  <p>{{episode.characters}}</p>
+    <h2>Informações do episódio:</h2>
+    <div class="mt-3">
+        <h5>Nome: {{ episode.name }}</h5>
+        <h5>Data de Lançamento: {{ episode.air_date }}</h5>
+        <h5>Código: {{ episode.episode }}</h5>
+        <h5>Personagens presentes no episódio:</h5>
+        <ul>
+            {% if characters %}
+                {% for character in characters %}
+                    <li><a href="/profile/{{ character.id }}">{{ character.name }}</a></li>
+                {% endfor %}
+            {% else %}
+                <li>Nenhum personagem presente neste episódio.</li>
+            {% endif %}
+        </ul>
+    </div>
 </div>
 
 {% endblock %}
