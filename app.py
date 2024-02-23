@@ -5,7 +5,7 @@ import urllib.request, json
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/") #ok
 def get_list_characters_page():
     url = "https://rickandmortyapi.com/api/character"
     response = urllib.request.urlopen(url) # envia a req e recebe a res
@@ -36,7 +36,10 @@ def get_list_characters():
     for character in dict["results"]:
         character = {
             "name": character["name"],
-            "status": character["status"]
+            "status": character["status"],
+            "origin": character["origin"],
+            "location": character["location"],
+            "episode": character["episode"]
         }
         
         characters.append(character)
@@ -125,4 +128,14 @@ def get_profile_episode(id):
     data = response.read() 
     episode_data = json.loads(data)    
 
-    return render_template("episode.html", episode = episode_data)
+    characters = []
+    for character_url in episode_data["characters"]:
+        response = urllib.request.urlopen(character_url)
+        character_data = json.loads(response.read())
+        characters.append({
+            "id": character_data["id"],
+            "name": character_data["name"]
+        })
+    
+    return render_template("episode.html", episode=episode_data, characters=characters)
+    

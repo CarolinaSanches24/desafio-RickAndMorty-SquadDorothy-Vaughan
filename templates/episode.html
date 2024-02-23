@@ -1,5 +1,5 @@
-{% extends "layout.html"%} {% block content %}
-
+{% extends "layout.html" %}
+{% block content %}
 <div class="container mt-3">
     <h2>Informações do episódio:</h2>
     <div class="mt-3">
@@ -8,15 +8,10 @@
         <h5>Código: {{ episode.episode }}</h5>
         <h5>Personagens presentes no episódio:</h5>
         <ul>
-            {% if characters %}
-                {% for character in characters %}
-                    <li><a href="/profile/{{ character.id }}">{{ character.name }}</a></li>
-                {% endfor %}
-            {% else %}
-                <li>Nenhum personagem presente neste episódio.</li>
-            {% endif %}
+            {% for character in characters %}
+                <li><a href="/profile/{{ character.id }}">{{ character.name }}</a></li>
+            {% endfor %}
         </ul>
     </div>
 </div>
-
 {% endblock %}
