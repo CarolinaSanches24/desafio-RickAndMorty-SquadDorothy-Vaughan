@@ -1,21 +1,40 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 <div class="row">
-    <div class="col-sm-3 col-2">
-        <img src="{{ profile.image }}" alt="{{ profile.name }}" class="img-fluid img-thumbnail">
-    </div>
-    <div class="col-sm-3 col-2">
-        <h3 class="h5">{{ profile.name }}</h3>
-        <p>Status: {{ profile.status }}</p>
-        <p>Espécie: {{ profile.species }}</p> <!-- Adiciona a espécie -->
-        <p>Gênero: {{ profile.gender }}</p> <!-- Adiciona o gênero -->
-        <p>Origem: <a href="/location/{{ profile.origin.id }}">{{ profile.origin.name }}</a></p> <!-- Adiciona link para a origem -->
-        <p>Localização: <a href="/location/{{ profile.location.id }}">{{ profile.location.name }}</a></p> <!-- Adiciona link para a localização -->
-        <p>Episódio: 
-            {% for episode in profile.episode %}
-                <a href="/episode/{{ episode.split('/')[-1] }}">{{ episode }}</a>{% if not loop.last %}, {% endif %}
-            {% endfor %}
-        </p>
-    </div>
+  <div class="col-sm-3 col-2">
+    <img
+      src="{{ profile.image }}"
+      alt="{{ profile.name }}"
+      class="img-fluid img-thumbnail"
+    />
+  </div>
+  <div class="col-sm-3 col-2">
+    <h3 class="h5">{{ profile.name }}</h3>
+    <p>Status: {{ profile.status }}</p>
+    <p>Espécie: {{ profile.species }}</p>
+    <!-- Adiciona a espécie -->
+    <p>Gênero: {{ profile.gender }}</p>
+    <!-- Adiciona o gênero -->
+    <p>
+      Origem:
+      <a href="/location/{{ profile.origin.id }}">{{ profile.origin.name }}</a>
+    </p>
+    <!-- Adiciona link para a origem -->
+    <p>
+      Localização:
+      <a href="/location/{{ profile.location.id }}"
+        >{{ profile.location.name }}</a
+      >
+    </p>
+    <!-- Adiciona link para a localização -->
+    <p>
+      Episódio: {% for episode in profile.episode %}
+      <a
+        href="/episode/{{ episode.split('/')[-1] }}"
+        style="text-decoration: none"
+        class="link-dark"
+        >{{ episode }}</a
+      >{% if not loop.last %}, {% endif %} {% endfor %}
+    </p>
+  </div>
 </div>
 {% endblock %}

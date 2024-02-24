@@ -92,7 +92,7 @@ def get_location(id):
 @app.route("/episodes")  
 
 def get_list_episodes_page():
-    url = "https://rickandmortyapi.com/api/episode" # abre a URL do api onde estão os episódios
+    url = "https://rickandmortyapi.com/api/episode?page=2" # abre a URL do api onde estão os episódios
     response = urllib.request.urlopen(url)  # envia a requisição e armezena os dados retornados
     episodes = response.read()  # lê os dados recebidos
     dict = json.loads(episodes) # carrega os dados em json 
@@ -103,7 +103,7 @@ def get_list_episodes_page():
 @app.route("/listepisodes")
 
 def get_episodes():
-    url = "https://rickandmortyapi.com/api/episode"
+    url = "https://rickandmortyapi.com/api/episode?page=2"
     response = urllib.request.urlopen(url) 
     episodes = response.read() 
     dict = json.loads(episodes) 
