@@ -128,15 +128,15 @@ def get_episodes():
 @app.route("/episode/<id>")
 def get_profile_episode(id):
     url = f"https://rickandmortyapi.com/api/episode/{id}"
-    response = urllib.request.urlopen(url) 
-    data = response.read() 
-    episode_data = json.loads(data)    
+    response = urllib.request.urlopen(url) # envie a requisição e armazena os dados retornados
+    data = response.read() # leitura dos dados vindo da API
+    episode_data = json.loads(data) # transforma esses dados em json p/ python
 
-    characters = []
-    for character_url in episode_data["characters"]:
-        response = urllib.request.urlopen(character_url)
-        character_data = json.loads(response.read())
-        characters.append({
+    characters = [] # cria uma lista vazia para os personagens
+    for character_url in episode_data["characters"]: # for para listar todos os personagens do episódio
+        response = urllib.request.urlopen(character_url) # envie a requisição e armazena os dados retornados
+        character_data = json.loads(response.read()) # transforma os dados em JSON e faz a leitura
+        characters.append({ # insere o id e nome dos personagens em um dicionário
             "id": character_data["id"],
             "name": character_data["name"]
         })
