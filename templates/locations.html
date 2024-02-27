@@ -1,4 +1,5 @@
 {% extends "layout.html"%} {% block content %}
+
 <table class="table">
   <thead>
     <tr>
@@ -6,17 +7,21 @@
       <th scope="col">Nome</th>
       <th scope="col">Tipo</th>
       <th scope="col">Dimensão</th>
-      <th scope="col">Link perfil localização</th>
+      <th scope="col" class="link_perfil_location">Link perfil localização</th>
     </tr>
   </thead>
   <tbody>
     {% for location in locations %}
     <tr>
       <th scope="row">{{location.id}}</th>
-      <td>"{{location.name}}"</td>
+      <td>
+        <a href="/location/{{location.id}}" class="text-dark"
+          >{{location.name}}</a
+        >
+      </td>
       <td>"{{location.type}}"</td>
       <td>"{{location.dimension}}"</td>
-      <td>
+      <td class="link_perfil_location">
         <a href="/location/{{location.id}}" class="btn btn-primary"
           >Ver Perfil da Localização</a
         >
@@ -25,4 +30,5 @@
     {% endfor%}
   </tbody>
 </table>
+
 {% endblock %}

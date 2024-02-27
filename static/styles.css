@@ -1,0 +1,27 @@
+@media screen and (max-width: 768px) {
+  /*  regras CSS para telas com largura máxima de 768px */
+  .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .imagem {
+    max-width: 500px;
+    margin-bottom: 25px;
+  }
+  .col-sm-3.col-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  /*Responsividade da tabela localizações*/
+  .link_perfil_location {
+    display: none;
+  }
+}
+.text-dark {
+  text-decoration: none;
+}
