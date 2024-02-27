@@ -38,7 +38,7 @@
         "kind": 2,
         "importPath": "app",
         "description": "app",
-        "peekOfCode": "def get_profile(id):\n    url = \"https://rickandmortyapi.com/api/character/\"+id\n    response = urllib.request.urlopen(url) \n    data = response.read(); \n    character_data = json.loads(data);\n    return render_template(\"profile.html\", profile = character_data)\n@app.route(\"/lista\") #Personagens em formato JSON\ndef get_list_characters():\n    url = \"https://rickandmortyapi.com/api/character\"\n    response = urllib.request.urlopen(url)",
+        "peekOfCode": "def get_profile(id):\n    url = \"https://rickandmortyapi.com/api/character/\"+id\n    response = urllib.request.urlopen(url) \n    data = response.read(); \n    character_data = json.loads(data);\n    location_id= character_data[\"location\"][\"url\"].split(\"/\")[-1]\n    return render_template(\"profile.html\", profile = character_data, location_id=location_id)\n@app.route(\"/lista\") #Personagens em formato JSON\ndef get_list_characters():\n    url = \"https://rickandmortyapi.com/api/character\"",
         "detail": "app",
         "documentation": {}
     },

@@ -20,8 +20,8 @@ def get_profile(id):
     response = urllib.request.urlopen(url) 
     data = response.read(); 
     character_data = json.loads(data);
-    
-    return render_template("profile.html", profile = character_data)
+    location_id= character_data["location"]["url"].split("/")[-1]
+    return render_template("profile.html", profile = character_data, location_id=location_id)
 
 @app.route("/lista") #Personagens em formato JSON
 
