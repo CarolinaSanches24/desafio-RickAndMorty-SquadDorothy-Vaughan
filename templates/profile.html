@@ -11,19 +11,19 @@
     <h3 class="h5">{{ profile.name }}</h3>
     <p>Status: {{ profile.status }}</p>
     <p>Espécie: {{ profile.species }}</p>
-    <!-- Adiciona a espécie -->
     <p>Gênero: {{ profile.gender }}</p>
-    <!-- Adiciona o gênero -->
     <p>
       Origem:
-      <a href="/location/{{ location_id}}">{{ profile.origin.name }}</a>
+      <a href="/location/{{ location_id}}"
+      class="link-dark"
+      >{{ profile.origin.name }}</a>
     </p>
-    <!-- Adiciona link para a origem -->
     <p>
       Localização:
-      <a href="/location/{{ location_id}}">{{ profile.location.name }}</a>
+      <a href="/location/{{ location_id}}"
+      class="link-dark"
+      >{{ profile.location.name }}</a>
     </p>
-    <!-- Adiciona link para a localização -->
     <p>
       Episódio: {% for episode in profile.episode %}
       <a

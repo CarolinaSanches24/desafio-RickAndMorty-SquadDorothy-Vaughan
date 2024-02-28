@@ -47,15 +47,15 @@ _Responsavéis_ : Simone Braghin e Ana Carolina Barreto
     Branch:
     AddInformacoesPerfilPersonagem
 
-_Responsavéis_ : Simone Braghin
 
 #### O que foi feito:
 
 1. Maria Carolina fez as configurações iniciais do projeto e criou Template Scrum no Jira para aplicar métodologia agíl no desenvolvimento.
 2. Maria carolina criou função para pegar os dados de localização da api, criou o template locations.html, e a rota /locations.
-3. Isadora Bagatini criou rotas para a página de episódios
-4. Isadora Bagatini criou o template em html para mostrar a lista dos resultados
-5. Simone Braghin criou as rotas com os episódios e a origem dos personagens nas informações dos episódios
-6. Simone Braghin adicionou as informações de espécie, gênero, origem e localização do personagem na página de perfil do personagem.
+3. Isadora Bagatini criou rotas para a página de episódios.
+4. Isadora Bagatini criou o template em html para mostrar a lista dos resultados.
+5. Ana Barreto criou rota para perfil de personagem exibindo Nome, Status, Espécie e Gênero.
+5. Simone Braghin criou as rotas com os episódios, origem e localização dos personagens nas informações dos episódios.
+6. Ana Barreto ajustou o template com as rotas para Origem e Localização.
 7. 
 8. 
