@@ -80,28 +80,6 @@ def get_list_episodes_page():
 
     return render_template("episodes.html", episodes=all_episodes) # mostra os resultados no template criado
 
-# Criando uma rota para a lista de episódios em JSON:
-@app.route("/listepisodes")
-def get_episodes():
-    all_episodes = [] # cria uma lista para armazenar todos os episódios
-
-    for page in range(1, 4):  # cria um loop para puxar os episódios de todas as páginas 
-        url = f"https://rickandmortyapi.com/api/episode?page={page}" # abre a URL do api onde estão os episódios
-        response = urllib.request.urlopen(url)  # envia a requisição e armezena os dados retornados
-        episodes = response.read()  # lê os dados recebidos
-        dict = json.loads(episodes) # carrega os dados em json 
-
-        for episode in dict["results"]:
-            episode_data = {    # cria um dicionário com as informações requisitadas de cada ep. para que sejam adicionados na lista
-                "episode": episode["episode"],
-                "name": episode["name"],
-                "air_date": episode["air_date"],
-                "id": episode["id"]
-            }
-            all_episodes.append(episode_data)  # adiciona os dados do episódio na lista
-
-    return json.dumps({"episodes": all_episodes})
-
 # Rota carregar o perfil do episódio
 @app.route("/episode/<id>")
 def get_profile_episode(id):
