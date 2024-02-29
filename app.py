@@ -49,22 +49,23 @@ def get_list_locations_page():
 @app.route("/location/<id>") # obter uma location
 def get_location(id):
     url = f"https://rickandmortyapi.com/api/location/{id}"
-    response = urllib.request.urlopen(url)
-    location_data = response.read()
-    location_dict = json.loads(location_data)
+    response = urllib.request.urlopen(url) # envia a requisição e recebe a resposta
+    location_data = response.read() # leitura dos dados vindos da api
+    location_dict = json.loads(location_data) # transforma esses dados em json p/ python
     
     characters = []
 
-    for character_url in location_dict.get("residents", []):
-        response = urllib.request.urlopen(character_url)
+    for character_url in location_dict.get("residents", []): #Acessar a chave residents
+        response = urllib.request.urlopen(character_url) # envia a requisição e recebe a resposta
         character_data = response.read()
         character_dict = json.loads(character_data)
+        # adiciona esse elemento a lista de personagens
         characters.append({
             "id": character_dict["id"],
             "name": character_dict["name"]
         })
     
-    return render_template("location.html", location=location_dict, characters=characters)
+    return render_template("location.html", location=location_dict, characters=characters) #renderiza o template
 
 # Criando uma rota para episódios:
 @app.route("/episodes")
